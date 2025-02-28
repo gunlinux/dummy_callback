@@ -1,0 +1,29 @@
+[project]
+name = "dummy-callback"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "flask>=3.1.0",
+    "gunicorn>=23.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.15.0",
+    "pytest>=8.3.4",
+    "ruff>=0.9.9",
+]
+
+[tool.ruff.lint]
+# 1. Enable flake8-bugbear (`B`) rules, in addition to the defaults.
+select = ["ALL"]
+
+# 2. Avoid enforcing line-length violations (`E501`)
+ignore = ["E501", "Q000", "D", "DTZ005", "SIM117", "ANN", "I001", "S101"]
+
+# 3. Avoid trying to fix flake8-bugbear (`B`) violations.
+unfixable = ["B"]
+
+#
